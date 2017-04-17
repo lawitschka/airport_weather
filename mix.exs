@@ -7,7 +7,8 @@ defmodule AirportWeather.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     deps: deps(),
+     escript: escript_config()]
   end
 
   # Configuration for the OTP application
@@ -29,5 +30,10 @@ defmodule AirportWeather.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     []
+  end
+
+  defp escript_config do
+    [main_module: AirportWeather.CLI,
+     name: "airport-weather"]
   end
 end
