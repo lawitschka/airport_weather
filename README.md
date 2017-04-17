@@ -1,6 +1,9 @@
-# AirportWeather
+# Airport Weather
 
-**TODO: Add description**
+CLI tool for fetching and displaying current weather information provided by the
+National Oceanic and Atmospheric Administration.
+
+This tool is an exercise from the "Programming Elixir" book.
 
 ## Installation
 
@@ -16,4 +19,3 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/airport_weather](https://hexdocs.pm/airport_weather).
-
