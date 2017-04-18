@@ -41,8 +41,30 @@ defmodule AirportWeather.CLI do
   end
 
   def process(icao) do
-    IO.puts "Requested weather at location #{icao}"
+    icao
+    |> AirportWeather.WeatherData.fetch
+    |> decode_response
+    |> print_weather_data
+  end
 
-    System.halt(0)
+  defp decode_response({ :ok, observation }) do
+    observation
+  end
+
+  defp decode_response({ :error, _ }) do
+    IO.puts "Error fetching from NOAA"
+    System.halt(2)
+  end
+
+  defp print_weather_data(%{ location: location, observation_time: observation_time, weather: weather, temperature: temperature, wind: wind }) do
+    IO.puts """
+    Current weather at #{location}
+    ------------------------------
+
+    Last Update: #{observation_time}
+    Weather:     #{weather}
+    Temperature: #{temperature}
+    Wind:        #{wind}
+    """
   end
 end
