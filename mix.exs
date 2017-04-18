@@ -30,7 +30,8 @@ defmodule AirportWeather.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      { :httpoison, "~> 0.11"}
+      { :httpoison, "~> 0.11"},
+      { :sweet_xml, "~> 0.6.5" }
     ]
   end
 
